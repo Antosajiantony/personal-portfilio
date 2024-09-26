@@ -114,37 +114,39 @@
       <div  data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 d-flex-md  justify-content-center">
           <div class="col-lg-7">
-            <form  id="contact-form" class="php-email-form"  onsubmit="return submitted()">
+            <form  id="contact-form" onsubmit="func()">
               <div class="row gy-4">
+
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="user_name" id="name-field" class="form-control"   >
+                  <input type="text" name="name" id="name-field" class="form-control" required="">
                 </div>
-            
+
                 <div class="col-md-6">
                   <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="user_email" id="email-field"  >
+                  <input type="email" class="form-control" name="email" id="email-field" required="">
                 </div>
-            
+
                 <div class="col-md-12">
                   <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field"  >
+                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
                 </div>
-            
+
                 <div class="col-md-12">
                   <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" ></textarea>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
                 </div>
-            
+
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message" style="display: none;"></div>
-                  <div class="sent-message" style="display: none;"></div>
-                  <button type="submit" value="Send">Send Message</button>
+                  <div class="loading"></div>
+                  <div class="error-message"></div>
+                  <div class="sent-message"></div>
+
+                  <button type="submit" value="submit"  class="btn btn-primary">submit</button>
                 </div>
+
               </div>
             </form>
-            
           </div><!-- End Contact Form -->
         </div>
       </div>
@@ -179,6 +181,11 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script> function func()
+    {
+      alert("submitted successfully")
+    }</script>
+
   <script>
     document.getElementById('contact-form').addEventListener('submit', function(event) {
     // Get form values
@@ -212,13 +219,6 @@
         event.preventDefault(); // Prevent form submission
         return;
     }
-
-
-    function submitted()
-    {
-      alert("submitted successfully")
-    }
-    // If all checks pass, the form will be submitted
 });
 
   </script>
